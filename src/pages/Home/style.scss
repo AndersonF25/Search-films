@@ -1,0 +1,31 @@
+.container-home {
+  width: 100%;
+  position: relative;
+
+  .title-home {
+    text-align: center;
+    padding-top: 40px;
+    font-size: 3.5rem;
+  }
+
+  .movies-container {
+    padding-top: 50px;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    margin: 0 auto;
+    gap: 30px 10px;
+    padding-bottom: 40px;
+  }
+
+  .btn-from-top {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: #f7d354;
+  }
+}

@@ -1,0 +1,50 @@
+.movie-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+
+  .container-info {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      .icon {
+        color: #f7d354;
+      }
+
+      p {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .description {
+    width: 60%;
+
+    h3 {
+      font-size: 1.6rem;
+      padding-bottom: 10px;
+      text-align: center;
+      .icon {
+        color: #f7d354;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 27px;
+      text-align: center;
+    }
+  }
+}
