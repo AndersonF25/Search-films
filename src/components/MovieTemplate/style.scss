@@ -1,17 +1,25 @@
 .container-movie-template {
-  width: 350px;
+  width: 380px;
   display: flex;
   gap: 0.7rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: #ccc;
-  padding: 14px;
+  border-radius: 2px;
 
-  img {
-    object-fit: cover;
+
+  .container-img {
     width: 100%;
-    height: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: flex-start;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 2px;
+    }
   }
 
   h2 {
@@ -30,6 +38,5 @@
     border-radius: 5px;
     font-weight: 500;
     cursor: pointer;
-  
   }
 }

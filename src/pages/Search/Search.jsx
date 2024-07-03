@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import MovieTemplate from '../../components/MovieTemplate/MovieTemplate'
 import axios from 'axios'
 
@@ -11,6 +11,7 @@ const Search = () => {
   const [movies, setMovies] = useState([])
   const query = searchParams.get("q")
   const apiKey = import.meta.env.VITE_API_KEY
+  const navigate = useNavigate()
 
 
   const getSearchedMovies = async (searchURL) => {
@@ -32,8 +33,11 @@ const Search = () => {
   }, [query, apiKey])
 
 
+
+
   return (
     <div className='container-home'>
+      <button onClick={() =>navigate(-1) }>voltar</button>
       <h2 className='title-home'>Resultados para: {query}</h2>
 
       <div className="movies-container">
