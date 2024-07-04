@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import MovieTemplate from "../../components/MovieTemplate/MovieTemplate";
 import axios from "axios";
 import {
@@ -14,7 +14,6 @@ const Movies = () => {
   const apiKey = import.meta.env.VITE_API_KEY;
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
-  const navigate = useNavigate()
 
   const getMovies = async (searchURL) => {
     try {
@@ -39,8 +38,10 @@ const Movies = () => {
 
   return (
     <>
-      <button className="btn-back" onClick={() => navigate(-1)}>Voltar</button>
-      <div className="movie-container" >
+      <div
+        className="movie-container"
+       
+      >
         {movie && (
           <>
             <MovieTemplate movie={movie} showLink={false} />

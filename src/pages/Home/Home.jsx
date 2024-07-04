@@ -35,7 +35,6 @@ const Home = () => {
       behavior: "smooth",
     });
   };
-  console.log(topMovies)
 
   return (
     <div className="container-home">
