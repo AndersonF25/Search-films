@@ -1,9 +1,9 @@
 import "./style.scss";
 import PropTypes from "prop-types";
 import { FaStar } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
-const MovieTemplate = ({ movie, showLink = true }) => {
+
+const MovieTemplate = ({ movie }) => {
   return (
     <a href={`movie/${movie.id}`} className="link">
       <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />

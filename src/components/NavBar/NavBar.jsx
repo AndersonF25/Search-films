@@ -4,9 +4,11 @@ import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
 
 import "./style.scss";
 import { useState } from "react";
+import ModalInput from "../ModalSearch/ModalInput";
 
 const NavBar = () => {
   const [search, setSearch] = useState("");
+  const [openModalSearch, setOpenModalSearch] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -31,9 +33,11 @@ const NavBar = () => {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        <button type="submit">
+        <button type="submit" onClick={() => setOpenModalSearch(true)}>
           <BiSearchAlt2 />
         </button>
+
+        {openModalSearch ? <ModalInput /> : null}
       </form>
     </div>
   );

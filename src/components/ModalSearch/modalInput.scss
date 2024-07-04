@@ -1,0 +1,31 @@
+.container-modal {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background-color: rgb(0, 0, 0, 0.89);
+  display: grid;
+  place-items: center;
+
+  .content-modal {
+    width: 500px;
+    height: 140px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container-input{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        input{
+            z-index: 200;
+            background-color: red;
+        }
+    }
+  }
+}
