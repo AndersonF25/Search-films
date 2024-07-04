@@ -10,6 +10,7 @@ const MovieTemplate = ({ movie, showLink = true }) => {
 
       <h2>{movie.title}</h2>
       <p>
+        <FaStar size={20} color="yellow"/>
        {movie.vote_average.toFixed(1)}
       </p>
   

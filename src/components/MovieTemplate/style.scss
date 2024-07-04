@@ -6,20 +6,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+
   position: relative;
   margin-top: 40px;
 
-
   &:hover > img {
-    transform:translateY(-6px);
-    transition: .5s;
+    transform: translateY(-6px);
+    transition: 0.5s;
   }
-  &:hover > p {
-    transform:translateY(-6px);
-    transition: .5s;
-  }
-
 
   img {
     object-fit: contain;
@@ -27,22 +21,24 @@
     height: 100%;
     border-radius: 2px;
     position: relative;
-    transition: all .5s;
+    transition: all 0.5s;
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.23rem;
+    color: #fff;
+    padding-top: 6px;
   }
   p {
     font-weight: 700;
     border-radius: 50%;
-    background-color: #002;
+    display: flex;
+    gap: 6px;
+    font-size: 1.2rem;
     padding: 9px 6px;
     color: #fff;
-    position: absolute;
-    top: -10px;
-    right: 75px;
-    transition: .5s;
+    align-items: center;
+    margin-bottom: 5px;
   }
 
   .button-template {
