@@ -34,17 +34,19 @@ const NavBar = () => {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        <button type="submit" onClick={() => setOpenModalSearch(true)}>
+        <button type="submit" className="btn">
           <BiSearchAlt2 />
         </button>
-
-        {openModalSearch ? (
-          <ModalInput
-            setOpenModalSearch={setOpenModalSearch}
-            openModalSearch={openModalSearch}
-          />
-        ) : null}
+        <button onClick={() => setOpenModalSearch(!false)}> abrir modal</button>
       </form>
+      {openModalSearch ? (
+        <ModalInput
+          setOpenModalSearch={setOpenModalSearch}
+          openModalSearch={openModalSearch}
+          setSearch={setSearch}
+          searchText={search}
+        />
+      ) : null}
     </div>
   );
 };
