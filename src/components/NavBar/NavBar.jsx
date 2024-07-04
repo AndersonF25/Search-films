@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
 
 import "./style.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalInput from "../ModalSearch/ModalInput";
 
 const NavBar = () => {
@@ -28,6 +28,7 @@ const NavBar = () => {
 
       <form className="nav-items" type="submit" onSubmit={handleSubmit}>
         <input
+          className="input-search"
           type="text"
           placeholder="Buscar filme"
           onChange={(e) => setSearch(e.target.value)}
@@ -37,7 +38,12 @@ const NavBar = () => {
           <BiSearchAlt2 />
         </button>
 
-        {openModalSearch ? <ModalInput /> : null}
+        {openModalSearch ? (
+          <ModalInput
+            setOpenModalSearch={setOpenModalSearch}
+            openModalSearch={openModalSearch}
+          />
+        ) : null}
       </form>
     </div>
   );
