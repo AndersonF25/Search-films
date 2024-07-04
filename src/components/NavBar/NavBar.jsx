@@ -5,10 +5,11 @@ import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
 import "./style.scss";
 import { useEffect, useState } from "react";
 import ModalInput from "../ModalSearch/ModalInput";
+import { IoClose } from "react-icons/io5";
 
 const NavBar = () => {
   const [search, setSearch] = useState("");
-  const [openModalSearch, setOpenModalSearch] = useState(false);
+  const [openInput, setOpenInput] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -27,26 +28,29 @@ const NavBar = () => {
       </Link>
 
       <form className="nav-items" type="submit" onSubmit={handleSubmit}>
-        <input
-          className="input-search"
-          type="text"
-          placeholder="Buscar filme"
-          onChange={(e) => setSearch(e.target.value)}
-          value={search}
-        />
-        <button type="submit" className="btn">
+        {openInput ? (
+          <input
+            className="input-search"
+            type="text"
+            placeholder="Buscar filme"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+          />
+        ) : null}
+        {openInput ? (
+          <button onClick={() => setOpenInput(false)}>
+            <IoClose />
+          </button>
+        ) : null}
+
+        <button
+          type="submit"
+          className="btn"
+          onClick={() => setOpenInput(true)}
+        >
           <BiSearchAlt2 />
         </button>
-        <button onClick={() => setOpenModalSearch(!false)}> abrir modal</button>
       </form>
-      {openModalSearch ? (
-        <ModalInput
-          setOpenModalSearch={setOpenModalSearch}
-          openModalSearch={openModalSearch}
-          setSearch={setSearch}
-          searchText={search}
-        />
-      ) : null}
     </div>
   );
 };

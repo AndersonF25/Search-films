@@ -17,7 +17,7 @@ const ModalInput = ({
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, []);
+  }, [openModalSearch]);
 
   const navigate = useNavigate();
 
@@ -28,21 +28,20 @@ const ModalInput = ({
     setSearch("");
     setOpenModalSearch(false);
   };
-
   console.log(search);
-
   return (
-    <div className="container-modal" onClick={() => setOpenModalSearch(!true)}>
+    <div className="container-modal" onClick={() => setOpenModalSearch(false)}>
       <div className="content-modal" onClick={(e) => e.stopPropagation()}>
         <IoClose
           className="btn-close"
-          onClick={() => setOpenModalSearch(!true)}
+          onClick={() => setOpenModalSearch(false)}
         />
         <form className="container-input" onSubmit={handleSubmit}>
           <input
             type="text"
             className="input"
             placeholder="Busque seu filme"
+            value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
           <button className="btn-search" type="submit">
