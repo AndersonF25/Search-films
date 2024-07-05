@@ -18,6 +18,10 @@ const NavBar = () => {
     if (!search) return;
     navigate(`/search?q=${search}`);
     setSearch("");
+
+    setTimeout(() => {
+      setOpenInput(false);
+    }, 1200);
   };
 
   return (

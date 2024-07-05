@@ -1,33 +1,19 @@
 import "./style.scss";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import MovieTemplate from "../../components/MovieTemplate/MovieTemplate";
 import { BiArrowFromBottom } from "react-icons/bi";
+import getMovies from "../../hooks/useGetMovies";
 
-const apiKey = import.meta.env.VITE_API_KEY;
 
 const Home = () => {
-  const [topMovies, setTopMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
+  const [category, setCategory] = useState("popular");
 
-  const inititalURL = "https://image.tmdb.org/t/p/w500";
-
-  const getPopularMovies = async () => {
-    const response = await axios.get(
-      "https://api.themoviedb.org/3/movie/popular",
-      {
-        params: {
-          api_key: apiKey,
-          language: "pt-BR",
-        },
-      }
-    );
-
-    setTopMovies(response.data.results);
-  };
+  const initialURL = "https://image.tmdb.org/t/p/w500";
 
   useEffect(() => {
-    getPopularMovies();
-  }, []);
+    getMovies(category).then((data) => setMovies(data));
+  }, [category]);
 
   const handleFromTop = () => {
     window.scrollTo({
@@ -39,6 +25,45 @@ const Home = () => {
   return (
     <div className="container-home">
       <h2 className="title-home">Filmes Populares</h2>
+      <div>
+        <label>
+          <input
+            type="radio"
+            value="popular"
+            checked={category === "popular"}
+            onChange={() => setCategory("popular")}
+          />
+          Popular
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="now_playing"
+            checked={category === "now_playing"}
+            onChange={() => setCategory("now_playing")}
+          />
+          Now Playing
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="top_rated"
+            checked={category === "top_rated"}
+            onChange={() => setCategory("top_rated")}
+          />
+          Top Rated
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="upcoming"
+            checked={category === "upcoming"}
+            onChange={() => setCategory("upcoming")}
+          />
+          Upcoming
+        </label>
+      </div>
+
       <button
         onClick={handleFromTop}
         title="voltar ao topo"
@@ -47,12 +72,12 @@ const Home = () => {
         <BiArrowFromBottom />
       </button>
       <div className="movies-container">
-        {topMovies.length > 0 &&
-          topMovies.map((movie) => (
+        {movies.length > 0 &&
+          movies.map((movie) => (
             <MovieTemplate
               key={movie.id}
               movie={movie}
-              inititalURL={inititalURL}
+              initialURL={initialURL}
             />
           ))}
       </div>

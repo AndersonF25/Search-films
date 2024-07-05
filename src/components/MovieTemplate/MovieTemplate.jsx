@@ -21,8 +21,6 @@ const MovieTemplate = ({ movie }) => {
 
 MovieTemplate.propTypes = {
   movie: PropTypes.any,
-  showLink: PropTypes.bool,
-  initialURL: PropTypes.string,
 };
 
 export default MovieTemplate;
