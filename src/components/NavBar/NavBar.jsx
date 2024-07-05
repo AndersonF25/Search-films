@@ -26,19 +26,24 @@ const NavBar = () => {
         <BiCameraMovie />
         Movie Lib
       </Link>
+      <div className="container-form">
+        <form className="nav-items" type="submit" onSubmit={handleSubmit}>
+          {openInput ? (
+            <input
+              className="input-search"
+              type="text"
+              placeholder="Buscar filme"
+              onChange={(e) => setSearch(e.target.value)}
+              value={search}
+            />
+          ) : null}
+        </form>
 
-      <form className="nav-items" type="submit" onSubmit={handleSubmit}>
         {openInput ? (
-          <input
-            className="input-search"
-            type="text"
-            placeholder="Buscar filme"
-            onChange={(e) => setSearch(e.target.value)}
-            value={search}
-          />
-        ) : null}
-        {openInput ? (
-          <button onClick={() => setOpenInput(false)}>
+          <button
+            className="btn-close-input"
+            onClick={() => setOpenInput(false)}
+          >
             <IoClose />
           </button>
         ) : null}
@@ -50,7 +55,7 @@ const NavBar = () => {
         >
           <BiSearchAlt2 />
         </button>
-      </form>
+      </div>
     </div>
   );
 };
