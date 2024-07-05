@@ -3,8 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
 
 import "./style.scss";
-import { useEffect, useState } from "react";
-import ModalInput from "../ModalSearch/ModalInput";
+import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 
 const NavBar = () => {
