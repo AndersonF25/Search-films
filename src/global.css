@@ -7,7 +7,9 @@
   font-family: "Roboto", sans-serif;
 }
 
-body {
+body,
+html {
   background-color: #020917;
-  color: #ffff;
+  color: #ebebeb;
+  padding-bottom: 30px;
 }

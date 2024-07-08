@@ -4,6 +4,7 @@ import MovieTemplate from "../../components/MovieTemplate/MovieTemplate";
 import { BiArrowFromBottom } from "react-icons/bi";
 import getMovies from "../../hooks/useGetMovies";
 import CategoryFilms from "../../components/CategoryFilms/CategoryFilms";
+import DarkMode from "../../components/DarkMode/DarkMode";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -25,6 +26,7 @@ const Home = () => {
   return (
     <div className="container-home">
       <CategoryFilms category={category} setCategory={setCategory} />
+      <DarkMode/>
       <h2 className="title-home">All films</h2>
 
       <button
