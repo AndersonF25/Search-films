@@ -8,11 +8,19 @@
 }
 
 :root {
-  --font-primary: #ebebeb;
+  --font-primary: rgba(240, 240, 240, 0.932);
+  --font-secondary: #ebc43a;
+  --bg-color: #010f2c;
+  --bg-color-secondary: #ebc43a;
+  --border-color: #c1c1c1;
+}
+
+body[data-theme="light"] {
+  --font-primary: #020917;
   --font-secondary: #f7d354;
-  --bg-color: #020917;
+  --bg-color: #ebebeb;
   --bg-color-secondary: #f7d354;
-  --border-color: #ccc;
+  --border-color: #020917;
 }
 
 body,

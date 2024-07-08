@@ -5,6 +5,7 @@ import { BiCameraMovie } from "react-icons/bi";
 import "./style.scss";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import DarkMode from "../DarkMode/DarkMode";
 
 const NavBar = () => {
   const [search, setSearch] = useState("");
@@ -28,6 +29,7 @@ const NavBar = () => {
         <BiCameraMovie />
         Movie Lib
       </Link>
+      <DarkMode />
       <div className="container-form">
         <form className="nav-items" type="submit" onSubmit={handleSubmit}>
           <label for="text" className="label">

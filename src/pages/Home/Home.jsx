@@ -26,7 +26,6 @@ const Home = () => {
   return (
     <div className="container-home">
       <CategoryFilms category={category} setCategory={setCategory} />
-      <DarkMode/>
       <h2 className="title-home">All films</h2>
 
       <button
