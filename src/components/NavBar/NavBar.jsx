@@ -1,14 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
+import { BiCameraMovie } from "react-icons/bi";
 
 import "./style.scss";
 import { useState } from "react";
-import { IoClose } from "react-icons/io5";
+import { FaSearch } from "react-icons/fa";
 
 const NavBar = () => {
   const [search, setSearch] = useState("");
-  const [openInput, setOpenInput] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -31,33 +30,18 @@ const NavBar = () => {
       </Link>
       <div className="container-form">
         <form className="nav-items" type="submit" onSubmit={handleSubmit}>
-          {openInput ? (
+          <label for="text" className="label">
             <input
-              className="input-search"
-              type="text"
-              placeholder="Buscar filme"
-              onChange={(e) => setSearch(e.target.value)}
+              type="search"
+              id="text"
+              className="input"
               value={search}
+              autoComplete="off"
+              onChange={(e) => setSearch(e.target.value)}
             />
-          ) : null}
+            <FaSearch className="icon" type="submit" />
+          </label>
         </form>
-
-        {openInput ? (
-          <button
-            className="btn-close-input"
-            onClick={() => setOpenInput(false)}
-          >
-            <IoClose />
-          </button>
-        ) : null}
-
-        <button
-          type="submit"
-          className="btn"
-          onClick={() => setOpenInput(true)}
-        >
-          <BiSearchAlt2 />
-        </button>
       </div>
     </div>
   );
