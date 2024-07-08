@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import MovieTemplate from "../../components/MovieTemplate/MovieTemplate";
 import axios from "axios";
+import "./style.scss";
 
 const Search = () => {
   const inititalURL = "https://image.tmdb.org/t/p/w500";
@@ -33,6 +34,9 @@ const Search = () => {
   return (
     <>
       <div className="container-home">
+        <button className="btn-go-back" onClick={() => navigate(-1)}>
+          Voltar
+        </button>
         <h2 className="title-home">Resultados para: {query}</h2>
 
         <div className="movies-container">

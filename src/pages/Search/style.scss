@@ -1,0 +1,17 @@
+.container-home {
+  width: 100%;
+  position: relative;
+
+  .btn-go-back {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    border: none;
+    background-color: #f7d354;
+    padding: 4px 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
