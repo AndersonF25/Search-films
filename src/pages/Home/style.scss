@@ -21,6 +21,10 @@
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 80px 20px;
     padding-bottom: 40px;
+
+    @media (max-width : 1600px) {
+      padding: 0 10px;
+    }
   }
 
   .btn-from-top {

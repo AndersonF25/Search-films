@@ -8,12 +8,25 @@
   background-color: #020917;
   border-bottom: 1px solid #ccc;
 
+  @media (max-width: 450px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
   .h2 {
     font-size: 2.4rem;
     font-weight: 700;
     color: #f7d354;
     display: flex;
     gap: 0.3rem;
+
+    @media (max-width: 700px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 1.8rem;
+    }
   }
 
   .container-form {
