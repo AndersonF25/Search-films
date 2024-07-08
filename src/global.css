@@ -7,9 +7,17 @@
   font-family: "Roboto", sans-serif;
 }
 
+:root {
+  --font-primary: #ebebeb;
+  --font-secondary: #f7d354;
+  --bg-color: #020917;
+  --bg-color-secondary: #f7d354;
+  --border-color: #ccc;
+}
+
 body,
 html {
-  background-color: #020917;
-  color: #ebebeb;
+  background-color: var(--bg-color);
+  color: var(--font-primary);
   padding-bottom: 30px;
 }

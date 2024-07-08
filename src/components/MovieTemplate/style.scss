@@ -22,7 +22,7 @@
 
   h2 {
     font-size: 1.23rem;
-    color: #ebebeb;
+    color: var(--font-primary);
     padding-top: 6px;
     text-align: center;
   }
@@ -33,10 +33,8 @@
     gap: 6px;
     font-size: 1rem;
     padding: 9px 6px;
-    color: #ebebeb;
+    color: var(--font-primary);
     align-items: center;
     margin-bottom: 5px;
   }
-
-
 }

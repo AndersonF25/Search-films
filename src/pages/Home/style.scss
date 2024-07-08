@@ -10,7 +10,7 @@
     text-align: center;
     padding-top: 40px;
     font-size: 2.5rem;
-    color: #f7d354;
+    color: var(--font-secondary);
   }
 
   .movies-container {
@@ -35,7 +35,7 @@
     height: 40px;
     cursor: pointer;
     border: none;
-    background-color: #f7d354;
+    background-color: var(--font-secondary);
     z-index: 8;
   }
 }

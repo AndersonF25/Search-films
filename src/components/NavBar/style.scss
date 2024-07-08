@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #020917;
-  border-bottom: 1px solid #ccc;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
 
   @media (max-width: 450px) {
     flex-direction: column;
@@ -17,7 +17,7 @@
   .h2 {
     font-size: 2.4rem;
     font-weight: 700;
-    color: #f7d354;
+    color: var(--font-secondary);
     display: flex;
     gap: 0.3rem;
 
@@ -44,7 +44,7 @@
         position: relative;
 
         .input {
-          background-color: #f7d354;
+          background-color: var(--font-secondary);
           width: 0px;
           height: 2.5rem;
           transition: width 1s, border-radius 1s;
@@ -59,7 +59,7 @@
           &:focus {
             border-radius: 10px;
             width: 250px;
-            color: black;
+            color: var(--bg-color);
           }
         }
 
@@ -67,12 +67,11 @@
           font-size: 18px;
           display: inline-block;
           position: absolute;
-          left:12px;
+          left: 12px;
           top: 12px;
           transition: 0.4s;
           cursor: pointer;
-          color: black;
-      
+          color: var(--bg-color);
         }
 
         .input:focus + .icon {
@@ -80,50 +79,5 @@
         }
       }
     }
-
-    .btn {
-      background-color: #f7d354;
-      border: none;
-      border-radius: 5px;
-      margin-left: 18px;
-      height: 40px;
-      color: #000;
-      padding: 0.5rem;
-      font-size: 1.1rem;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      transition: 0.4s;
-      z-index: 100;
-
-      &:hover {
-        background-color: #fff434;
-        transition: 0.4s;
-      }
-    }
-
-    .btn-close-input {
-      background-color: transparent;
-      border: none;
-      height: 40px;
-      border-radius: 5px;
-      color: #fff;
-      background-color: #c23;
-      padding: 0.5rem;
-      font-size: 1.1rem;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      animation: openSearch 0.6s linear;
-    }
-  }
-}
-
-@keyframes openSearch {
-  from {
-    transform: translateX(200px);
-  }
-  to {
-    transform: translateX(0);
   }
 }
