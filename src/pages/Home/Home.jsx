@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import MovieTemplate from "../../components/MovieTemplate/MovieTemplate";
 import { BiArrowFromBottom } from "react-icons/bi";
 import getMovies from "../../hooks/useGetMovies";
-
+import CategoryFilms from "../../components/CategoryFilms/CategoryFilms";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -24,45 +24,8 @@ const Home = () => {
 
   return (
     <div className="container-home">
-      <h2 className="title-home">Filmes Populares</h2>
-      <div>
-        <label>
-          <input
-            type="radio"
-            value="popular"
-            checked={category === "popular"}
-            onChange={() => setCategory("popular")}
-          />
-          Popular
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="now_playing"
-            checked={category === "now_playing"}
-            onChange={() => setCategory("now_playing")}
-          />
-          Now Playing
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="top_rated"
-            checked={category === "top_rated"}
-            onChange={() => setCategory("top_rated")}
-          />
-          Top Rated
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="upcoming"
-            checked={category === "upcoming"}
-            onChange={() => setCategory("upcoming")}
-          />
-          Upcoming
-        </label>
-      </div>
+      <CategoryFilms category={category} setCategory={setCategory} />
+      <h2 className="title-home">All films</h2>
 
       <button
         onClick={handleFromTop}

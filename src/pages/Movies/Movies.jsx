@@ -16,7 +16,7 @@ const Movies = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
 
-  const getMovies = async (searchURL) => {
+  const getMovieById = async (searchURL) => {
     try {
       const response = await axios.get(searchURL);
       setMovie(response.data);
@@ -27,7 +27,7 @@ const Movies = () => {
 
   useEffect(() => {
     const searchFromURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=pt-BR`;
-    getMovies(searchFromURL);
+    getMovieById(searchFromURL);
   }, [id, apiKey]);
 
   const { formatCurrency } = useFormatCurrency();
