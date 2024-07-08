@@ -52,19 +52,31 @@ const Movies = () => {
             <h3>
               <BsWallet2 className="icon" /> Orçamento :
             </h3>
-            <p>{formatCurrency(movie?.budget)}</p>
+            {movie?.budget === 0 ? (
+              <p>não informado</p>
+            ) : (
+              <p>{formatCurrency(movie?.budget)}</p>
+            )}
           </div>
           <div className="info">
             <h3>
               <BsGraphUp className="icon" /> Receita :
             </h3>
-            <p>{formatCurrency(movie?.revenue)}</p>
+            {movie?.budget === 0 ? (
+              <p>não informado</p>
+            ) : (
+              <p>{formatCurrency(movie?.revenue)}</p>
+            )}
           </div>
           <div className="info">
             <h3>
               <BsHourglassSplit className="icon" /> Duração :
             </h3>
-            <p>{movie?.runtime} minutos</p>
+            {movie?.runtime === 0 ? (
+              <p>não informado</p>
+            ) : (
+              <p>{movie?.runtime} minutos</p>
+            )}
           </div>
         </div>
       </div>

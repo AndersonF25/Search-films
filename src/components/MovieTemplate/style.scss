@@ -6,11 +6,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   position: relative;
   margin-top: 40px;
 
   &:hover > img {
+    transform: translateY(-6px);
+    transition: 0.5s;
+  }
+  &:hover > p {
     transform: translateY(-6px);
     transition: 0.5s;
   }
@@ -35,11 +38,16 @@
     border-radius: 50%;
     display: flex;
     gap: 6px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 9px 6px;
     color: #fff;
     align-items: center;
     margin-bottom: 5px;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    transition: 0.5s;
+    background-color: #020917;
   }
 
   .button-template {

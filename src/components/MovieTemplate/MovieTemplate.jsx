@@ -1,6 +1,5 @@
 import "./style.scss";
 import PropTypes from "prop-types";
-import { FaStar } from "react-icons/fa";
 
 const MovieTemplate = ({ movie }) => {
   return (
@@ -11,10 +10,7 @@ const MovieTemplate = ({ movie }) => {
       />
 
       <h2>{movie.title}</h2>
-      <p>
-        <FaStar size={20} color="yellow" />
-        {movie.vote_average.toFixed(1)}
-      </p>
+      {movie.vote_average === 0 ? null : <p>{movie.vote_average.toFixed(1)}</p>}
     </a>
   );
 };
