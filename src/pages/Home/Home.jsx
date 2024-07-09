@@ -4,6 +4,7 @@ import MovieTemplate from "../../components/MovieTemplate/MovieTemplate";
 import { BiArrowFromBottom } from "react-icons/bi";
 import getMovies from "../../hooks/useGetMovies";
 import CategoryFilms from "../../components/CategoryFilms/CategoryFilms";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -24,7 +25,10 @@ const Home = () => {
 
   return (
     <div className="container-home">
-      <CategoryFilms category={category} setCategory={setCategory} />
+      <div className="container-category">
+        <SearchBar/>
+        <CategoryFilms category={category} setCategory={setCategory} />
+      </div>
       <h2 className="title-home">All films</h2>
 
       <button
