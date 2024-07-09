@@ -35,7 +35,7 @@ const Movies = () => {
   return (
     <>
       <div className="movie-container">
-        <button className="btn-back" onClick={() => navigate(-1)}>
+        <button className="btn-back" onClick={() => navigate('/')}>
           Voltar
         </button>
         <div className="container-img">

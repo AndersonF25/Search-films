@@ -4,7 +4,6 @@ import MovieTemplate from "../../components/MovieTemplate/MovieTemplate";
 import { BiArrowFromBottom } from "react-icons/bi";
 import getMovies from "../../hooks/useGetMovies";
 import CategoryFilms from "../../components/CategoryFilms/CategoryFilms";
-import DarkMode from "../../components/DarkMode/DarkMode";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);

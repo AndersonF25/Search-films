@@ -7,6 +7,9 @@
   font-family: "Roboto", sans-serif;
 }
 
+
+
+
 :root {
   --font-primary: rgba(240, 240, 240, 0.932);
   --font-secondary: #ebc43a;
@@ -21,6 +24,7 @@ body[data-theme="light"] {
   --bg-color: #ebebeb;
   --bg-color-secondary: #f7d354;
   --border-color: #020917;
+  transition: all 0.4s linear;
 }
 
 body,
