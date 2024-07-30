@@ -6,12 +6,13 @@ const Movies = () => {
   useEffect(() => {
     const fecthData = async () => {
       const response = await fetch(
-        "https://api.themoviedb.org/3/movie/now_playing?language=pt-BR&page=2&region=brazil"
-      , {
-        headers:{
-            accept: 'application/json'
+        "https://api.themoviedb.org/3/movie/now_playing?language=pt-BR&page=2&region=brazil",
+        {
+          headers: {
+            accept: "application/json",
+          },
         }
-      });
+      );
       const data = response.json();
 
       setMovies(data.results);
