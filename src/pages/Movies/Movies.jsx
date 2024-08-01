@@ -40,8 +40,8 @@ const Movies = () => {
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundAttachment: 'fixed',
-        height: '100dvh'
+        backgroundAttachment: "fixed",
+        height: "100dvh",
       }}
     >
       <div className="overflow"></div>
