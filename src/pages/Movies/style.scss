@@ -5,13 +5,16 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  height: 100dvh;
+  overflow: hidden;
 
   .overflow {
     position: absolute;
     top: 0;
     left: 0;
+
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     background: rgba(0, 0, 0, 0.7); /* Cor preta com 50% de opacidade */
     filter: brightness(0.19);
     z-index: 1;
@@ -89,10 +92,12 @@
       justify-content: center;
 
       @media (max-width: 900px) {
-        max-width: 50%;
+        max-width: 28%;
+        width: 100%;
+        margin-top: 20px;
       }
       @media (max-width: 500px) {
-        max-width: 65%;
+        max-width: 42%;
       }
 
       img {
@@ -132,6 +137,7 @@
     position: relative;
     z-index: 10;
 
+
     h3 {
       font-size: 1.6rem;
       padding-bottom: 15px;
@@ -149,6 +155,8 @@
       line-height: 27px;
       text-align: center;
       padding: 0 8px;
+      overflow-y: scroll;
+      height: 80px;
 
       @media (max-width: 500px) {
         font-size: 1rem;
