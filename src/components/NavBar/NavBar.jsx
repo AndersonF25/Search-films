@@ -8,7 +8,7 @@ import DarkMode from "../DarkMode/DarkMode";
 const NavBar = () => {
   return (
     <div className="container-nav">
-      <Link to="/" className="h2">
+      <Link to="/home" className="h2">
         <BiCameraMovie />
         Movie Lib
       </Link>

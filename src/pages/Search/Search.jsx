@@ -34,7 +34,7 @@ const Search = () => {
   return (
     <>
       <div className="container-home">
-        <button className="btn-go-back" onClick={() => navigate('/')}>
+        <button className="btn-go-back" onClick={() => navigate('/home')}>
           Voltar
         </button>
         <h2 className="title-home">Resultados para: {query}</h2>
