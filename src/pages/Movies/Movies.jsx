@@ -33,9 +33,9 @@ const Movies = () => {
   const { formatCurrency } = useFormatCurrency();
 
   return (
-    <>
+    <div className="container">
       <div className="movie-container">
-        <button className="btn-back" onClick={() => navigate('/home')}>
+        <button className="btn-back" onClick={() => navigate("/home")}>
           Voltar
         </button>
         <div className="container-img">
@@ -85,9 +85,13 @@ const Movies = () => {
         <h3>
           <BsFillFileEarmarkTextFill className="icon" /> Descrição
         </h3>
-        <p>{movie?.overview}</p>
+        {movie?.overview === "" ? (
+          <p>não informado</p>
+        ) : (
+          <p>{movie?.overview}</p>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
