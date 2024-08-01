@@ -31,6 +31,10 @@
     align-items: center;
     justify-content: space-around;
 
+    @media (max-width: 1050px) {
+      justify-content: center;
+    }
+
     .overflow {
       position: absolute;
       top: 0;
@@ -49,13 +53,28 @@
       flex-direction: column;
       gap: 10px;
 
+      @media (max-width: 1050px) {
+        padding: 0 10px;
+      }
+
       h2 {
-        font-size: 2.4rem;
+        font-size: 3.1rem;
         color: #fff;
-        font-weight: 700;
+        font-weight: 300;
         text-transform: uppercase;
-        width: 500px;
+        max-width: 550px;
+        width: 100%;
         text-align: center;
+
+        @media (max-width: 1050px) {
+          font-size: 2.6rem;
+        }
+        @media (max-width: 480px) {
+          font-size: 2.2rem;
+        }
+        @media (max-width: 400px) {
+          font-size: 2rem;
+        }
       }
 
       .btn-continue {
@@ -85,6 +104,10 @@
     .notebook {
       position: relative;
       z-index: 10;
+
+      @media (max-width: 1050px) {
+        display: none;
+      }
 
       img {
         width: 100%;

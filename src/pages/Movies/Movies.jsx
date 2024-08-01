@@ -33,14 +33,23 @@ const Movies = () => {
   const { formatCurrency } = useFormatCurrency();
 
   return (
-    <div className="container">
+    <section
+      className="container"
+      style={{
+        backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie?.backdrop_path})`,
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "100%",
+      }}
+    >
+      <div className="overflow"></div>
       <div className="movie-container">
         <button className="btn-back" onClick={() => navigate("/home")}>
           Voltar
         </button>
         <div className="container-img">
           <img
-            src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
+            src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
             alt={movie?.title}
           />
         </div>
@@ -91,7 +100,7 @@ const Movies = () => {
           <p>{movie?.overview}</p>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

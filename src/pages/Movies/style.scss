@@ -1,6 +1,4 @@
 .container {
-  position: absolute;
-
   width: 100%;
   height: 100dvh;
   display: flex;
@@ -8,11 +6,21 @@
   flex-direction: column;
   justify-content: center;
 
+  .overflow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Cor preta com 50% de opacidade */
+    filter: brightness(0.19);
+    z-index: 1;
+  }
 
   .movie-container {
     width: 100%;
+    height: 100%;
     margin: 0 auto;
-    position: relative;
     z-index: 10;
     display: flex;
     align-items: center;
@@ -105,8 +113,8 @@
 
   .btn-back {
     position: absolute;
-    top: 110px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     background-color: var(--font-secondary);
     border: none;
     padding: 3px 7px;
@@ -121,6 +129,8 @@
     width: 70%;
     margin: 0 auto;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
 
     h3 {
       font-size: 1.6rem;
