@@ -1,11 +1,21 @@
 .container-home {
   width: 100%;
   position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  .movies-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 70px 0;
+    margin-bottom: 90px;
+  }
 
   .btn-go-back {
     position: absolute;
-    top: 0;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     border: none;
     background-color: var(--font-secondary);
     padding: 4px 10px;

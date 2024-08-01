@@ -51,10 +51,18 @@ const PrincipalTemplate = () => {
               <h2>Lançamentos</h2>
               <Swiper
                 slidesPerView={7}
-                loop={true}
                 navigation={true}
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
+                breakpoints={{
+                  360: { slidesPerView: 2 },
+                  400: { slidesPerView: 2 },
+                  480: { slidesPerView: 2 },
+                  640: { slidesPerView: 3 },
+                  768: { slidesPerView: 4 },
+                  1024: { slidesPerView: 5 },
+                  1536: { slidesPerView: 7 },
+                }}
               >
                 {movieCard.map((movie) => (
                   <SwiperSlide key={movie.id}>

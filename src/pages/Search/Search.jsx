@@ -34,12 +34,12 @@ const Search = () => {
   return (
     <>
       <div className="container-home">
-        <button className="btn-go-back" onClick={() => navigate('/home')}>
+        <button className="btn-go-back" onClick={() => navigate(-1)}>
           Voltar
         </button>
         <h2 className="title-home">Resultados para: {query}</h2>
 
-        <div className="movies-container">
+        <div className="movies-grid">
           {movies.length > 0 &&
             movies.map((movie) => (
               <MovieTemplate

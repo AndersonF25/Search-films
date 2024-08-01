@@ -4,8 +4,8 @@ import MovieTemplate from "../../components/MovieTemplate/MovieTemplate";
 import { BiArrowFromBottom } from "react-icons/bi";
 import getMovies from "../../hooks/useGetMovies";
 import CategoryFilms from "../../components/CategoryFilms/CategoryFilms";
-import SearchBar from "../../components/SearchBar/SearchBar";
 import PrincipalTemplate from "../../components/PrincipalTemplate/PrincipalTemplate";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -28,7 +28,6 @@ const Home = () => {
     <div className="container-home">
       <PrincipalTemplate />
       <div className="container-category">
-        <SearchBar />
         <CategoryFilms category={category} setCategory={setCategory} />
       </div>
       <h2 className="title-home">All films</h2>
@@ -41,14 +40,23 @@ const Home = () => {
         <BiArrowFromBottom />
       </button>
       <div className="movies-container">
-        {movies.length > 0 &&
-          movies.map((movie) => (
-            <MovieTemplate
-              key={movie.id}
-              movie={movie}
-              initialURL={initialURL}
-            />
-          ))}
+        <Swiper
+          slidesPerView={7}
+          navigation={true}
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+        >
+          {movies.length > 0 &&
+            movies.map((movie) => (
+              <SwiperSlide key={movie.id}>
+                <MovieTemplate
+                  key={movie.id}
+                  movie={movie}
+                  initialURL={initialURL}
+                />
+              </SwiperSlide>
+            ))}
+        </Swiper>
       </div>
     </div>
   );

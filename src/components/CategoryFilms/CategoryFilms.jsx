@@ -33,16 +33,6 @@ const CategoryFilms = ({ category, setCategory }) => {
         />
         Top Rated
       </label>
-      <label className="label">
-        <input
-          className="input-radio"
-          type="radio"
-          value="upcoming"
-          checked={category === "upcoming"}
-          onChange={() => setCategory("upcoming")}
-        />
-        Upcoming
-      </label>
     </div>
   );
 };

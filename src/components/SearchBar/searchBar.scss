@@ -4,6 +4,8 @@
   align-items: center;
   overflow: hidden;
 
+  z-index: 2000;
+
   .nav-items {
     display: flex;
     position: relative;

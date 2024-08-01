@@ -4,6 +4,7 @@ import { BiCameraMovie } from "react-icons/bi";
 
 import "./style.scss";
 import DarkMode from "../DarkMode/DarkMode";
+import SearchBar from "../SearchBar/SearchBar";
 
 const NavBar = () => {
   return (
@@ -12,6 +13,7 @@ const NavBar = () => {
         <BiCameraMovie />
         Movie Lib
       </Link>
+      <SearchBar />
       <DarkMode />
     </div>
   );
