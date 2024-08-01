@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-
 import "./principalTemplate.scss";
 import getMovies from "../../hooks/useGetMovies";
 import NavBar from "../NavBar/NavBar";
-import { FaPlay } from "react-icons/fa";
 import { CiCirclePlus } from "react-icons/ci";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Link } from "react-router-dom";
 
 const PrincipalTemplate = () => {
   const [principalTemplate, setPrincipalTemplate] = useState([]);
@@ -17,14 +19,13 @@ const PrincipalTemplate = () => {
   }, []);
 
   useEffect(() => {
-    getMovies("popular").then((data) => setMovieCard(data));
+    getMovies("upcoming").then((data) => setMovieCard(data));
   }, []);
-
 
   return (
     <>
       {principalTemplate.map((item) => (
-        <div
+        <section
           className="container-principal"
           key={item.id}
           style={{
@@ -33,7 +34,7 @@ const PrincipalTemplate = () => {
         >
           <NavBar />
           <div className="overlay"></div>
-          <div className="content">
+          <section className="content">
             <h1>{item.title}</h1>
             <div className="details">
               <span>Imdb {item.vote_average.toFixed(1)}/10</span>
@@ -45,8 +46,31 @@ const PrincipalTemplate = () => {
                 <CiCirclePlus />
               </button>
             </div>
-          </div>
-        </div>
+
+            <div className="slides">
+              <h2>Lançamentos</h2>
+              <Swiper
+                slidesPerView={7}
+                loop={true}
+                navigation={true}
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+              >
+                {movieCard.map((movie) => (
+                  <SwiperSlide key={movie.id}>
+                    <Link to={`/movie/${movie.id}`}>
+                      <img
+                        className="img-slide"
+                        src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                        alt={movie.title}
+                      />
+                    </Link>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </section>
+        </section>
       ))}
     </>
   );
