@@ -41,10 +41,20 @@ const Home = () => {
       </button>
       <div className="movies-container">
         <Swiper
-          slidesPerView={7}
+          slidesPerView={6}
           navigation={true}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
+          breakpoints={{
+            350: { slidesPerView: 1 },
+            440: { slidesPerView: 1 },
+            540: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            890: { slidesPerView: 2 },
+            1040: { slidesPerView: 3 },
+            1350: { slidesPerView: 5 },
+            1750: { slidesPerView: 6 },
+          }}
         >
           {movies.length > 0 &&
             movies.map((movie) => (
