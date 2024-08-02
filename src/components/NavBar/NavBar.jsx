@@ -10,11 +10,12 @@ const NavBar = () => {
   return (
     <div className="container-nav">
       <Link to="/home" className="h2">
-        <BiCameraMovie />
-        Movie Lib
+        <BiCameraMovie size={50} />
       </Link>
-      <SearchBar />
-      <DarkMode />
+      <div className="search-container">
+        <SearchBar />
+        <DarkMode />
+      </div>
     </div>
   );
 };

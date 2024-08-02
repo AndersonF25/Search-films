@@ -7,15 +7,18 @@
   font-family: "Roboto", sans-serif;
 }
 
-
-
-
 :root {
   --font-primary: rgba(240, 240, 240, 0.932);
   --font-secondary: #ebc43a;
   --bg-color: #07090f;
   --bg-color-secondary: #ebc43a;
   --border-color: #c1c1c1;
+}
+
+body,
+html {
+  background-color: var(--bg-color);
+  color: var(--font-primary);
 }
 
 body[data-theme="light"] {
@@ -27,9 +30,6 @@ body[data-theme="light"] {
   transition: all 0.4s linear;
 }
 
-body,
-html {
-  background-color: var(--bg-color);
-  color: var(--font-primary);
-  
+body::-webkit-scrollbar {
+  width: 0px;
 }

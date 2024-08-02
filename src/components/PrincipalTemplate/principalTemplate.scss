@@ -1,14 +1,16 @@
 .container-principal {
   width: 100%;
-  height: 110dvh;
+  height: 100%;
   background-size: cover;
   background-position: center center;
+  margin-bottom: 40px;
+  position: relative;
 
   .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    height: 110dvh;
+    height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.1);
     box-shadow: 1px -92px 41px -14px var(--bg-color) inset;
@@ -24,8 +26,11 @@
     display: flex;
     align-items: start;
     flex-direction: column;
-    margin-top: 100px;
-    gap: 35px;
+    gap: 45px;
+
+    @media (max-width: 1512px) {
+      padding-left: 15px;
+    }
   }
 
   h1 {
@@ -36,6 +41,14 @@
     max-width: 450px;
     width: 100%;
     color: var(--font-primary);
+    text-shadow: 3px 2px 5px #00000052;
+
+    @media (max-width: 640px) {
+      font-size: 3.8rem;
+    }
+    @media (max-width: 500px) {
+      font-size: 3.3rem;
+    }
   }
 
   .details {
@@ -46,6 +59,7 @@
     color: var(--font-primary);
     font-weight: 900;
     font-style: italic;
+    text-shadow: 3px 2px 5px #00000052;
   }
 
   .play {
@@ -78,6 +92,11 @@
         transition: 0.3s;
         transform: scale(1.1);
       }
+
+      @media (max-width: 500px) {
+        padding: 6px 34px;
+        font-size: 1rem;
+      }
     }
 
     .btn-fav {
@@ -101,8 +120,7 @@
   .slides {
     max-width: 1600px;
     width: 100%;
-    margin-top: 30px;
-
+    margin: 0 auto;
 
     h2 {
       margin-bottom: 7px;
@@ -111,20 +129,24 @@
       text-transform: uppercase;
       font-weight: 700;
       font-style: italic;
+      text-shadow: 3px 2px 5px #00000052;
     }
 
     .img-slide {
       border-radius: 6px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.4s;
       position: relative;
-     
-      @media (max-width: 500px) {
-       
+      height: 300px;
+      @media (max-width: 625px) {
+        height: 270px;
+      }
+      @media (max-width: 550px) {
+        height: 250px;
       }
 
       &:hover {
-        transition: 0.3s;
+        transition: 0.4s;
         transform: scale(1.024);
       }
     }

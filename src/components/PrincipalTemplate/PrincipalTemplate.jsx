@@ -54,10 +54,20 @@ const PrincipalTemplate = () => {
                 navigation={true}
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
                 breakpoints={{
-                  360: { slidesPerView: 2 },
+                  350: {
+                    slidesPerView: 2,
+                  },
+                  360: {
+                    slidesPerView: 2,
+                  },
                   400: { slidesPerView: 2 },
-                  480: { slidesPerView: 2 },
+                  480: { slidesPerView: 3 },
                   640: { slidesPerView: 3 },
                   768: { slidesPerView: 4 },
                   1024: { slidesPerView: 5 },
@@ -69,7 +79,7 @@ const PrincipalTemplate = () => {
                     <Link to={`/movie/${movie.id}`}>
                       <img
                         className="img-slide"
-                        src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                        src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                         alt={movie.title}
                       />
                     </Link>
